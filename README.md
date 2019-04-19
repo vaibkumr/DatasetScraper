@@ -12,6 +12,32 @@ Tool to create image datasets for machine learning problems by scraping search e
 `pip install datasetscraper`
 Alternatively, you can clone this repository:
 
+
+# About
+- `Scraper.Scraper()`
+  - creates a scraper object which can be used to scrape URLs from search engines and later download them.
+  - `Scraper.Scraper(logLevel = logging.WARNING, headless=True)` are the defaults.
+      - headless: If False then you can see the actual pypeeter browser
+      - logLevel: Simple python logger level
+
+- `fetch_urls()`
+  - To fetch image URLs
+  - `fetch_urls(query, engine='google', maxlist=[200])`
+      - query: Search query
+      - engine: search engine or list of search engines
+      - maxlist: Maximum number of images to download. If multiple search engines exist then this needs to be a list specifying maximum number of images to fetch from each engine.
+
+- download
+  - To download the fetched URLs into a directory
+  - download(urls, directory='images/',
+                formats=['jpg', 'png', 'jpeg'], default='jpg',
+                nworkers=10, timeout=30)
+      - urls: List of urls
+      - directory: Place on disk where downloaded images are stored
+      - formats: List of file formats to dwonload
+      - nworkers: Number of threads for multithreaded download
+      - timeout: maximum time before which the download is cancelled
+
 # Usage:
 - Import
 `from datasetscraper import Scraper`
