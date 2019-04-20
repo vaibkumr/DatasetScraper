@@ -1,0 +1,11 @@
+README.md
+setup.py
+datasetscraper/Scraper.py
+datasetscraper/__init__.py
+datasetscraper/downloader.py
+datasetscraper/pageagent.py
+datasetscraper.egg-info/PKG-INFO
+datasetscraper.egg-info/SOURCES.txt
+datasetscraper.egg-info/dependency_links.txt
+datasetscraper.egg-info/requires.txt
+datasetscraper.egg-info/top_level.txt

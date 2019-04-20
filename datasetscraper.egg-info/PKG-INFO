@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: datasetscraper
+Version: 0.0.4
+Summary: Tool to create image datasets for machine learning problemsby scraping search engines like Google, Bing and Baidu. 
+Home-page: https://github.com/TimeTraveller-San/datasetscraper
+Author: Time Traveller
+Author-email: time.traveller.san@gmail.com
+License: GPLv2
+Description: # DatasetScraper
+        Tool to create image datasets for machine learning problems by scraping search engines like Google, Bing and Baidu.
+        
+        # Features:
+        - **Search engine support**: Google, Bing, Baidu. (in-production): Yahoo, Yandex, Duckduckgo
+        - **Image format support**: jpg, png, svg, gif, jpeg
+        - Fast multiprocessing enabled scraper
+        - Very fast multithreaded downloader
+        - Data verification after download for assertion of image files
+        
+        # Installation
+        - COMING SOON on pypi
+        
+        # Usage:
+        - Import
+        `from datasetscraper import Scraper`
+        
+        - Defaults
+        ```python
+        obj = Scraper()
+        urls = obj.fetch_urls('kiniro mosaic')
+        obj.download(urls, directory='kiniro_mosaic/')
+        ```
+        
+        - Specify a search engine
+        ```python
+        obj = Scraper()
+        urls = obj.fetch_urls('kiniro mosaic', engine=['google'])
+        obj.download(urls, directory='kiniro_mosaic/')
+        ```
+        
+        - Specify a list of search engines
+        ```python
+        obj = Scraper()
+        urls = obj.fetch_urls('kiniro mosaic', engine=['google', 'bing'])
+        obj.download(urls, directory='kiniro_mosaic/')
+        ```
+        
+        - Specify max images (default was 200)
+        ```python
+        obj = Scraper()
+        urls = obj.fetch_urls('kiniro mosaic', engine=['google', 'bing'], maxlist=[500, 300])
+        obj.download(urls, directory='kiniro_mosaic/')
+        ```
+        
+        # FAQs
+        - Why aren't yandex, yahoo, duckduckgo and other search engines supported?
+        They are hard to scrape, I am working on them and will update as soon as I can.
+        
+        - I set maxlist=[500] why are only (x<500) images downloaded?
+        There can be several reasons for this:
+            - Search ran out: This happens very often, google/bing might not have enough images for your query
+            - Slow internet: Increase the timeout (default is 60 seconds) as follows: ```obj.download(urls, directory='kiniro_mosaic/', timeout=100)```
+        
+        - How to debug?
+        You can change the logging level while making the scraper object : `obj = Scraper(logger.INFO)`
+        
+        # TODO:
+        - More search engines
+        - Better debug
+        - Write documentation
+        - Text data? Audio data?
+        
+Keywords: dataset_scraper,machine learning,dataset,images,scrape,yandex,google,bing,baidu
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3
+Description-Content-Type: text/markdown
