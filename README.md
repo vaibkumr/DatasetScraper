@@ -87,3 +87,6 @@ You can change the logging level while making the scraper object : `obj = Scrape
 - Better debug
 - Write documentation
 - Text data? Audio data?
+
+# Blach hole chan kawaii
+![](https://i.imgur.com/6OIxoup.jpg)
